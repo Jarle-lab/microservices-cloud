@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="cloud-consumer-order-feign-9002" />
+        <module name="cloud-api" />
+        <module name="cloud-consumer-order-9001" />
+        <module name="clound-provider-goods-8400" />
+        <module name="cloud-provider-goods-8004" />
+        <module name="cloud-provider-goods-8003" />
+        <module name="cloud-provider-goods-8002" />
+        <module name="cloud-provider-goods-8001" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="cloud-provider-goods-8001(1)" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

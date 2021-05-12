@@ -1,0 +1,29 @@
+server:
+  port: 8400
+
+spring:
+  application:
+    name: cloud-alibaba-sentinel-goods
+
+  cloud:
+    #向consul注册中心注册
+    consul:
+      host: localhost
+      port: 8500
+      discovery:
+        service-name: ${spring.application.name}
+    #向sentinel控制台注册
+    sentinel:
+      transport:
+        dashboard: localhost:8080
+        #注册到注册中心的端口，默认8719,每次+1
+        #port: 8719
+        #取消控制台懒加载
+        #eager: true
+
+#打开所有的web访问端点
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'

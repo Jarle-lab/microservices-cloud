@@ -1,0 +1,45 @@
+#商品服务提供者的服务端口
+server:
+  port: 8004
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password:
+    url: jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai
+  application:
+    ###应用程序服务名称
+    name: cloud-provider-goods
+  cloud:
+    ###开始配置consul的服务注册
+    consul:
+      #consul服务器的主机地址
+      host: localhost
+      #consul服务器的ip地址
+      port: 8500
+      discovery:
+        #服务主机名称
+        #hostname: 127.0.0.1
+        #服务的名称
+        service-name: ${spring.application.name}
+        #是否需要注册
+        register: true
+        #向sentinel控制台注册
+    sentinel:
+      ransport:
+      dashboard: localhost:8080
+      #注册到注册中心的端口，默认8719,每次+1
+      #port: 8719
+      #取消控制台懒加载
+      #eager: true
+      #打开所有的web访问端点
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+mybatis:
+  type-aliases-package: com.dxywork.pojo
+  mapper-locations: classpath:/mapper/*.xml
+

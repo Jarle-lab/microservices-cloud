@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dxywork.mapper.GoodsMapper">
+    <select id="list" resultType="Goods">
+        select *
+        from store
+        <where>
+            id=#{id}
+        </where>
+    </select>
+    <update id="update">
+        update store
+        set name=#{name},
+            price=#{price}
+    </update>
+    <insert id="add">
+        insert into store
+        values (default, #{name}, #{price}, ${me})
+    </insert>
+    <delete id="del">
+        delete from store
+        <where>
+            id=#{id}
+        </where>
+    </delete>
+</mapper>
